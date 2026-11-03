@@ -1,0 +1,46 @@
+{
+  "name": "site-security-check",
+  "version": "1.0.0",
+  "description": "Read what any browser sees of a website and say how well it is protected: HTTPS, certificate, security headers, cookies, version leaks, mixed content, security.txt, DNSSEC. Passive only. Made by Novu Web Solutions, novu.ee",
+  "type": "module",
+  "main": "site-security-check.mjs",
+  "exports": {
+    ".": "./site-security-check.mjs"
+  },
+  "bin": {
+    "site-security-check": "cli.mjs"
+  },
+  "files": [
+    "site-security-check.mjs",
+    "cli.mjs",
+    "worker.mjs",
+    "wrangler.example.jsonc"
+  ],
+  "scripts": {
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "security-headers",
+    "https",
+    "hsts",
+    "csp",
+    "ssrf",
+    "security-txt",
+    "dnssec",
+    "cloudflare-workers",
+    "estonia"
+  ],
+  "homepage": "https://novu.ee/tooriistad/turvakontroll/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/novuwebsolutions/site-security-check.git"
+  },
+  "bugs": {
+    "url": "https://github.com/novuwebsolutions/site-security-check/issues"
+  },
+  "author": "Novu Web Solutions OÜ (https://novu.ee)",
+  "license": "MIT"
+}

@@ -1,0 +1,15 @@
+// Copy to wrangler.jsonc, then: npx wrangler deploy
+{
+  "name": "site-security-check",
+  "main": "worker.mjs",
+  "compatibility_date": "2026-10-01",
+  // Outgoing requests go out to the public internet, as a visitor's would,
+  // never straight to the origin behind one of your own Cloudflare zones.
+  "compatibility_flags": ["global_fetch_strictly_public"],
+  // Checks per visitor IP and per checked site, per minute. The ids only have
+  // to be unique within your Cloudflare account.
+  "ratelimits": [
+    { "name": "IP_LIMIT", "namespace_id": "1001", "simple": { "limit": 10, "period": 60 } },
+    { "name": "SITE_LIMIT", "namespace_id": "1002", "simple": { "limit": 6, "period": 60 } }
+  ]
+}
